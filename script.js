@@ -47,3 +47,20 @@ document.querySelectorAll('.featured-image-3').forEach(image_3 =>{
   });
 });
 
+
+function validateForm() {
+  var a = document.forms["Form"]["name"].value;
+  var b = document.forms["Form"]["phone"].value;
+  var c = document.forms["Form"]["email"].value;
+  var d = document.forms["Form"]["subject"].value;
+
+if (b.length == 10) {
+  alert("Phone number is not 10");
+  return false;
+}
+
+  if (a == null || a == "", b == null || b == "", c == null || c == "", d == null || d == "") {
+    alert("Please Fill All Required Field");
+    return false;
+  }
+}
