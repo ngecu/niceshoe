@@ -1,1 +1,1 @@
-<?php include_once("asdasdsd"); ?>
+<?php include_once("index.html"); ?>

@@ -54,13 +54,25 @@ function validateForm() {
   var c = document.forms["Form"]["email"].value;
   var d = document.forms["Form"]["subject"].value;
 
-if (b.length == 10) {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (a.length < 1) {
+    alert("Name is required");
+    document.forms["Form"]["name"].focus();
+    return false;
+  }
+
+  
+if (b.length !== 10) {
   alert("Phone number is not 10");
+  document.forms["Form"]["phone"].focus();
   return false;
 }
 
-  if (a == null || a == "", b == null || b == "", c == null || c == "", d == null || d == "") {
-    alert("Please Fill All Required Field");
-    return false;
-  }
+if (!(c.match(mailformat))) {
+  alert("You have entered an invalid email address!");
+  document.forms["Form"]["email"].focus();
+return false;
+}
+
+
 }
